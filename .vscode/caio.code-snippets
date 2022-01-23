@@ -1,0 +1,43 @@
+{
+  "node-server": {
+    "scope": "javascript,typescript",
+    "prefix": "ndsrv",
+    "body": [
+      "import { app } from \"./app\";",
+      "",
+      "const PORT = process.env.PORT || 3333;",
+      "",
+      "app.listen(PORT, () => console.log(`Server is running on port ${${PORT}}`));"
+    ],
+    "description": "Cria uma arquivo base server para node."
+  },
+  "node-app": {
+    "scope": "javascript,typescript",
+    "prefix": "ndapp",
+    "body": [
+      "import express from \"express\";",
+      "",
+      "import { router } from \"./routes\";",
+      "",
+      "const app = express();",
+      "",
+      "app.use(express.json());",
+      "app.use(router);",
+      "",
+      "export { app };",
+    ],
+    "description": "Cria uma arquivo base app para node."
+  },
+  "node-route": {
+    "scope": "javascript,typescript",
+    "prefix": "ndrt",
+    "body": [
+      "import { Router } from \"express\";",
+      "",
+      "const router = Router();",
+      "",
+      "export { router };",
+    ],
+    "description": "Cria uma arquivo base routes para node."
+  }
+}
